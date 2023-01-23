@@ -1,4 +1,4 @@
-package Programming1.store.model;
+package ProgrammingI.store.model;
 
 public class Product {
     //Attributes

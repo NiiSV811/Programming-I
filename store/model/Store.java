@@ -1,4 +1,4 @@
-package Programming1.store.model;
+package ProgrammingI.store.model;
 
 public class Store {
     //Attributes
@@ -11,14 +11,14 @@ public class Store {
     }
 
     //Methods
-    public void setProduct(int pos, String name, float buyPrice, float sellPrice, float weight, float height, float width){
+    public void setProduct(int pos, String name, float[] itemNumValues){
         Product auxItem = new Product();
         auxItem.setName(name);
-        auxItem.setBuyPrice(buyPrice);
-        auxItem.setSellPrice(sellPrice);
-        auxItem.setWeight(weight);
-        auxItem.setHeight(height);
-        auxItem.setWidth(width);
+        auxItem.setBuyPrice(itemNumValues[0]);
+        auxItem.setSellPrice(itemNumValues[1]);
+        auxItem.setWeight(itemNumValues[2]);
+        auxItem.setHeight(itemNumValues[3]);
+        auxItem.setWidth(itemNumValues[4]);
 
         this.listProducts[pos] = auxItem;
     }
@@ -26,12 +26,13 @@ public class Store {
     public String getProductsToShow(){
         for(int i = 0; i < this.listProducts.length; i++){
             Product selectedItem = this.listProducts[i];
-            this.productsToShow += "Producto No. " + i + " : " + selectedItem.getName() +
-                    " Precio Compra: " + selectedItem.getBuyPrice()  + " $" +
-                    " Precio Venta: " + selectedItem.getSellPrice()  + " $" +
-                    " Peso : " + selectedItem.getWeight() + " kg" +
-                    " Alto : " + selectedItem.getHeight() + " m" +
-                    " Ancho: " + selectedItem.getWidth() + " m" + "\n";
+            this.productsToShow += "Product No. " + i+1 + " : " + selectedItem.getName() +
+                    "  Buy Price: " + selectedItem.getBuyPrice()  + " $" +
+                    "  Sell Price: " + selectedItem.getSellPrice()  + " $" +
+                    "  Weight : " + selectedItem.getWeight() + " kg" +
+                    "  Height : " + selectedItem.getHeight() + " m" +
+                    "  Width: " + selectedItem.getWidth() + " m" + "\n";
+
         }
 
         return this.productsToShow;
