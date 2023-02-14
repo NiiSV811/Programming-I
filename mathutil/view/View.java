@@ -20,15 +20,14 @@ public class View {
             if(input2.equals("x")){
                 break;
             }
-           JOptionPane.showMessageDialog(null, myController.biggerThan(input1, input2));
-           status = myController.AddNumArray(input1);
-           JOptionPane.showMessageDialog(null, status);
-           status = myController.AddNumArray(input2);
+           status = myController.AddNumArray(input1, input2);
            JOptionPane.showMessageDialog(null, status);
 
         }
 
-        JOptionPane.showMessageDialog(null, myController.getTheBiggestNumArray());
+        JOptionPane.showMessageDialog(null,"Los numeros ingresados fueron: \n" + myController.showArrayElements() + "\n"
+                + myController.getTheBiggestNumArray() + "\n" +
+                myController.getTheMinorNumArray());
 
     }
 }
