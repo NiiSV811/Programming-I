@@ -10,6 +10,8 @@ public class MathUtil {
         this.iterator = 0;
     }
 
+    public MathUtil(){}
+
     public int[] getNumArray(){return  this.numArray;}
     public int getIterator(){return this.iterator;}
     public int addBiggerToNumArray(int num1, int num2){
@@ -31,6 +33,22 @@ public class MathUtil {
         int theMinor = this.numArray[0];
         for(int i = 0; i < this.iterator; i++){
             theMinor = this.LessThan(this.numArray[i], theMinor);
+        }
+        return theMinor;
+    }
+
+    public int biggestNumArray(int[] arr){
+        int theBigger = 0;
+        for(int i = 0; i < arr.length; i++){
+            theBigger = this.BiggerThan(arr[i], theBigger);
+        }
+        return theBigger;
+    }
+
+    public int theMinorNumArray(int[] arr){
+        int theMinor = arr[0];
+        for(int i = 0; i < arr.length; i++){
+            theMinor = this.LessThan(arr[i], theMinor);
         }
         return theMinor;
     }
