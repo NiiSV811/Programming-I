@@ -5,30 +5,59 @@ import ProgrammingI.mathutil.model.MathUtil;
 public class NumArrayController {
     private MathUtil myUtil;
     public NumArrayController(){
-        this.myUtil = new MathUtil(3);
+        this.myUtil = new MathUtil();
     }
-
-    /*public String biggerThan(String num1, String num2){
-        int castedNum1 = 0;
-        int castedNum2 = 0;
-        int tempResult = 0;
-        String result = "";
-
+    //NEW METHODS
+    public String showTimesNum(String inputNum){
+        int auxParser = 0;
         try {
-            castedNum1 = Integer.parseInt(num1);
-            castedNum2 = Integer.parseInt(num2);
-            tempResult = this.myUtil.BiggerThan(castedNum1, castedNum2);
-            result = Integer.toString(tempResult);
+            auxParser = Integer.parseInt(inputNum);
         }catch (NumberFormatException e){
-            return "Datos no válidos para la comparación";
+            return "Numero invalido para la conversion";
         }
 
-        return "El número mayor entre " + num1 + " y " + num2 + " es: " + result;
+        return "El numero" + inputNum + " está " + this.myUtil.countElementArray(auxParser) + " veces en el arreglo";
     }
 
-     */
+    public String showTimesEachNum(){
+        String result = "";
+        int[] set = this.myUtil.generateSet();
+
+        for(int num : set){
+            result += "El numero " + num + " está " + myUtil.countElementArray(num) + "\n";
+        }
+
+        return "Veces que aparecen los numero en el arreglo son: \n"+ result;
+    }
+
+    public String showTimesEachNum(String inputArr){
+        String result = "";
+        int[] joinArray;
+        int[] set;
+        try {
+            joinArray = myUtil.stringToNumArray(inputArr);
+        }catch(NumberFormatException e){
+            return "Datos invalidos para convertir a arreglo.";
+        }
+        set = myUtil.generateSet(joinArray);
+        for(int num : set){
+            result += "El numero " + num + " está " + myUtil.countElementArray(num, joinArray) + "\n";
+        }
+
+        return "Veces que aparecen los numero en el arreglo son: \n"+ result;
+    }
 
 
+
+
+
+
+
+
+
+
+
+    ///
     public String AddNumArray(String num1, String num2){
         int castedNum1 = 0;
         int castedNum2 = 0;

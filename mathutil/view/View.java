@@ -1,12 +1,13 @@
 package ProgrammingI.mathutil.view;
 
 import ProgrammingI.mathutil.controller.NumArrayController;
+import ProgrammingI.mathutil.model.MathUtil;
 
 import javax.swing.*;
 
 public class View {
     public static void main(String[] args) {
-        NumArrayController myController = new NumArrayController();
+        NumArrayController myController = new NumArrayController(); /*
         String arrayIsFull = "El arreglo ya está lleno de números.";
         String status = "";
         String msg = "";
@@ -28,6 +29,13 @@ public class View {
         JOptionPane.showMessageDialog(null,"Los numeros ingresados fueron: \n" + myController.showArrayElements() + "\n"
                 + myController.getTheBiggestNumArray() + "\n" +
                 myController.getTheMinorNumArray());
+
+         */
+        String arr = "2,2,1,1,3,3,4,5,6,6";
+        String result = myController.showTimesEachNum(arr);
+        System.out.println(result
+        );
+
 
     }
 }
