@@ -14,6 +14,7 @@ public class MathUtil {
     }
 
     public MathUtil(){
+        this.numArray = new int[3];
         this.intArray = new int[]{1,2,3,3,4,5,5,10, 10, 20,1};
     }
 
@@ -81,12 +82,6 @@ public class MathUtil {
         }
         return set;
     }
-
-
-
-
-
-
 
     //PAST METHODS
     public int[] getNumArray(){return  this.numArray;}

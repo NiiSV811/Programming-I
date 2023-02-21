@@ -44,7 +44,7 @@ public class NumArrayController {
             result += "El numero " + num + " está " + myUtil.countElementArray(num, joinArray) + "\n";
         }
 
-        return "Veces que aparecen los numero en el arreglo son: \n"+ result;
+        return "Veces que aparecen los numeros en el arreglo son: \n"+ result;
     }
 
 
