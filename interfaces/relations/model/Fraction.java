@@ -2,7 +2,7 @@ package ProgrammingI.interfaces.relations.model;
 
 import java.util.Collections;
 
-public class Fraction implements Relationable, Comparable<Fraction> {
+public class Fraction implements Relationable, Comparable<Fraction> , Nameable {
     //Attributes
     private int numerator;
     private int denominator;
@@ -156,6 +156,11 @@ public class Fraction implements Relationable, Comparable<Fraction> {
     @Override
     public int compareTo(Fraction a){
         return this.isMinorThan(a) ? -1 : this.isEqualThan(a) ? 0 : 1;
+    }
+
+    @Override //Override when 2 interfaces have the same default method
+    public String getClassName(){
+        return Nameable.super.getClassName();
     }
 
 }

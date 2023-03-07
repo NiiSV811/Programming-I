@@ -59,6 +59,9 @@ public class Main {
         setRelationable.add(r1);
         setRelationable.add(r2);
 
+        for(Relationable r : setRelationable) {
+            System.out.println(r.getClassName());
+        }
 
     }
 }

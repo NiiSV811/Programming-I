@@ -1,6 +1,6 @@
 package ProgrammingI.interfaces.relations.model;
 
-public class Line  implements Relationable , Comparable<Line> {
+public class Line  implements Relationable , Comparable<Line> , Nameable{
     //attributes
     private int[] initCors;
     private int[] finalCors;
@@ -80,5 +80,10 @@ public class Line  implements Relationable , Comparable<Line> {
     @Override
     public int compareTo(Line l){
         return this.isMinorThan(l) ? -1 : this.isEqualThan(l) ? 0 : 1;
+    }
+
+    @Override //We can override default methods to specific behaviours
+    public String getClassName(){
+        return "Lineas xD";
     }
 }
