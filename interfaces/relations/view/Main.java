@@ -1,6 +1,8 @@
 package ProgrammingI.interfaces.relations.view;
 
 import ProgrammingI.interfaces.relations.model.Fraction;
+import ProgrammingI.interfaces.relations.model.Line;
+import ProgrammingI.interfaces.relations.model.Relationable;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -14,6 +16,7 @@ public class Main {
         Fraction substract = myFrac.substract(otherFrac);
         Fraction multiply = myFrac.multiply(otherFrac);
         Fraction division = myFrac.division(otherFrac);
+
 
         System.out.println( myFrac.toString() + " + " + otherFrac.toString() + " = " + sum.toString());
         System.out.println( myFrac.toString() + " - " + otherFrac.toString() + " = " + substract.toString());
@@ -33,6 +36,29 @@ public class Main {
         for(Fraction f : setOfFractions){
             System.out.println(f + "  ");
         }
+
+        Line myLn = new Line(new int[]{1,1});
+        Line otherLn = new Line(new int[]{1,2});
+        ArrayList <Line> lines = new ArrayList<Line>();
+        lines.add(new Line(new int[]{9,2}));
+        lines.add(myLn);
+        lines.add(otherLn);
+        lines.add(new Line(new int[]{2,8}));
+
+        Collections.sort(lines);
+
+        for (Line l : lines){
+            System.out.println(l.toString());
+        }
+
+        Relationable r1 = new Fraction(2,3);
+        Relationable r2 = new Line(new int[]{4,3}); //Create "Relationable" Objects like Lines or Fractions
+        ArrayList <Relationable> setRelationable = new ArrayList < Relationable>();
+        setRelationable.add(myFrac); // Can Add Fraction Objects
+        setRelationable.add(myLn);   //Can Add Line Objects
+        setRelationable.add(r1);
+        setRelationable.add(r2);
+
 
     }
 }
