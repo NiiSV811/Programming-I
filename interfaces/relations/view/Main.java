@@ -3,6 +3,7 @@ package ProgrammingI.interfaces.relations.view;
 import ProgrammingI.interfaces.relations.model.Fraction;
 import ProgrammingI.interfaces.relations.model.Line;
 import ProgrammingI.interfaces.relations.model.Relationable;
+import ProgrammingI.interfaces.relations.model.SuperClass;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -61,7 +62,11 @@ public class Main {
 
         for(Relationable r : setRelationable) {
             System.out.println(r.getClassName());
+            System.out.println(Relationable.isNull(r));
         }
+
+        SuperClass mySuper = new SuperClass();
+        System.out.println(mySuper.PI);
 
     }
 }
