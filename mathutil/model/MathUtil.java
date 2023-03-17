@@ -125,6 +125,14 @@ public class MathUtil {
         return theMinor;
     }
 
+    public int[] fillArr(int size, int num){
+        int[] arr = new int[size];
+        for(int i = 0; i < arr.length; i++){
+            arr[i] = num;
+        }
+        return arr;
+    }
+
     private int BiggerThan(int num1, int num2){
         return num1 > num2? num1 : num2;
     }
