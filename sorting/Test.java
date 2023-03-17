@@ -8,7 +8,17 @@ public class Test {
         System.out.println("Bubble Sort: ");
         System.out.println("Unordered -> " + printArrs(arr));
         System.out.println("  Ordered -> " + printArrs(myOrderStack.bubbleSort(arr)));
-        System.out.println(" Counting -> " + printArrs(myOrderStack.countingSort(duplicateArr)));
+        System.out.println("Duplicates-> " + printArrs(myOrderStack.bubbleSort(duplicateArr)) );
+
+        System.out.println("Counting Sort");
+        System.out.println("   Ordered -> " + printArrs(myOrderStack.countingSort1(arr)));
+        System.out.println("Duplicates -> " + printArrs(myOrderStack.countingSort1(duplicateArr)));
+
+        System.out.println("Insertion Sort");
+        System.out.println("   Ordered -> " + printArrs(myOrderStack.insertionSort(arr)));
+        System.out.println("Duplicates -> " + printArrs(myOrderStack.insertionSort(duplicateArr)));
+
+        
     }
 
     public static String printArrs(int[] arr){
