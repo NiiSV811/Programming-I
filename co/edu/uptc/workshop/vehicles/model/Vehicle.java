@@ -6,7 +6,6 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
     private double speed;
     private String plate;
     private double fuelBar;
-
     private double fullFuel;
 
     public Vehicle(String plate, double fullFuel,int doors, int wheels){
@@ -17,7 +16,9 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
         this.wheels = wheels;
         this.speed = 0;
 
+        printPlate();
         toTurnOn();
+        fuelLevel();
     }
 
     public String getPlate() {
@@ -62,12 +63,21 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
 
     public void toAcelerate(double speedUp){
         toConsumeFuel(2);
+        fuelLevel();
         this.speed+= speedUp;
     }
 
     public void toBrake(double speedDown){
         this.speed -= speedDown;
 
+    }
+
+    public void printPlate(){
+        System.out.println("Vehiculo de placas ( " + this.plate + " )");
+    }
+
+    public void fuelLevel(){
+        System.out.println("Porcentaje de combustible " + (this.fuelBar/this.fullFuel)*100 + " %");
     }
 
 

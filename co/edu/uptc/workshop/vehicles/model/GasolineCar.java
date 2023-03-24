@@ -20,7 +20,7 @@ public class GasolineCar extends TerrestVehicle {
         this.toConsumeFuel(this.getFullFuel());
 
         System.out.println("Listo, vehiculo a gasolina listo y consumiendo");
-        System.out.println("Menos potencial que disel");
+
     }
 
     @Override

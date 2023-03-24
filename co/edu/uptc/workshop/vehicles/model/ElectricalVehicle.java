@@ -17,7 +17,6 @@ public class ElectricalVehicle extends TerrestVehicle{
         System.out.println("Encendiendo vehiculo electrico...");
         System.out.println("Conectando batería a moteres");
         System.out.println("Listo! * No hace ruido *");
-        this.toConsumeFuel(this.getFullFuel());
     }
 
     @Override
@@ -25,5 +24,10 @@ public class ElectricalVehicle extends TerrestVehicle{
         System.out.println("Apagando vehiculo electrico...");
         System.out.println("Desconectando batería");
         System.out.println("* No hace ruido *");
+    }
+
+    @Override
+    public void fuelLevel(){
+        System.out.println("Porcentaje de bateria " + (this.getFuelBar()/this.getFullFuel())*100 + " %");
     }
 }

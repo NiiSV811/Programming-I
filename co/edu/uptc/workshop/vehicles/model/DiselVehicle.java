@@ -19,7 +19,6 @@ public class DiselVehicle extends TerrestVehicle {
         System.out.println("Usando alternador para crear prersion y arrancar motor");
         System.out.println("Empezando combustion");
         this.toConsumeFuel(this.getFullFuel());
-        System.out.println("Más potencia que Gasolina");
     }
 
     @Override
