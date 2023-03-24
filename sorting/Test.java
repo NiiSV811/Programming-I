@@ -18,6 +18,23 @@ public class Test {
         System.out.println("   Ordered -> " + printArrs(myOrderStack.insertionSort(arr)));
         System.out.println("Duplicates -> " + printArrs(myOrderStack.insertionSort(duplicateArr)));
 
+        BubbleSort sorter = new BubbleSort();
+        int[] array = {1,7,3,2,4,9,5,1};
+        int[] arr2 = {1,2,4,5,2,3};
+
+
+        System.out.println("bubble Sort");
+        System.out.println(printArrs(sorter.bubbleSort(arr)));
+
+        System.out.println("Reversed bubble sort");
+        System.out.println(printArrs(sorter.reversedBubbleSort(arr)));
+
+        System.out.println("Enhanced Bubble Sort");
+        System.out.println(printArrs(sorter.enhancedBubbleSort(arr2)));
+
+        System.out.println("Enhanced reversed Bubble Sort");
+        System.out.println(printArrs(sorter.enhancedReversedBubbleSort(arr2)));
+
         
     }
 
