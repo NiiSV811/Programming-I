@@ -11,13 +11,13 @@ public class VehicleInput {
     }
     public VehicleInput(){
         this.vehicles = new Vehicle[]{
-                new GasolineCar("ABC 123", 600, 4, 4),
-                new ElectricalVehicle("VBN 564", 1000, 4, 4),
-                new FixedWings("BNMZ 8765", 6000, 2,8),
-                new RotatoryWings("CVBS 5637", 4500, 2,8),
-                new DiselVehicle("HJY 456", 1200, 2, 6),
-                new GasolineCar("MNB 987", 1100, 4, 4),
-                new ElectricalVehicle("JHG 875", 2000, 4, 4)
+                new GasolineCar("ABC 123", "Ford Fiesta ",600, 4, 4),
+                new ElectricalVehicle("VBN 564","Tesla Roaster ", 1000, 4, 4),
+                new FixedWings("BNMZ 8765","Boeing 767", 6000, 2,8),
+                new RotatoryWings("CVBS 5637","BlackBird 3162", 4500, 2,8),
+                new DiselVehicle("HJY 456","KenWorth K488" , 1200, 2, 6),
+                new GasolineCar("MNB 987","Toyota Supra" ,1100, 4, 4),
+                new ElectricalVehicle("JHG 875","Tesla Model S", 2000, 4, 4)
         };
     }
 
@@ -45,7 +45,7 @@ public class VehicleInput {
 
 
     public String vehicleToString(Vehicle vehicle){
-        return " [ Vehiculo "  + " : " + vehicle.getClass().getSimpleName() +" , placa : " + vehicle.getPlate() + " , número Puertas: " + vehicle.getDoors() +
+        return " [ Vehiculo "  + " : " + vehicle.getClass().getSimpleName() +" modelo :"+ vehicle.getModel() +" , placa : " + vehicle.getPlate() + " , número Puertas: " + vehicle.getDoors() +
                 " ,  número ruedas: " + vehicle.getWheels() + " , maximo combustible: " + vehicle.getFullFuel() + " ]";
     }
 }

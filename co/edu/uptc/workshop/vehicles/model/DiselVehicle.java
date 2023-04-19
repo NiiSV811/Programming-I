@@ -2,8 +2,8 @@ package ProgrammingI.co.edu.uptc.workshop.vehicles.model;
 
 public class DiselVehicle extends TerrestVehicle {
 
-    public DiselVehicle(String plate, double fuelBar,int doors, int wheels){
-        super(plate, fuelBar, doors, wheels);
+    public DiselVehicle(String plate, String series, double fuelBar,int doors, int wheels){
+        super(plate,series, fuelBar, doors, wheels);
     }
 
     @Override

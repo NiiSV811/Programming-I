@@ -11,8 +11,20 @@ public class SortController {
         this.sorter = new VehicleSort();
     }
 
-    public String bubbleSortByPlate(Vehicle[] vehicles){
-        Vehicle[] sortedArr = sorter.vehicleBubbleSort(vehicles);
+    public String bubbleSort(Vehicle[] vehicles, String comparator){
+        Vehicle[] sortedArr = sorter.vehicleBubbleSort(vehicles, comparator);
+        VehicleInput arr = new VehicleInput(sortedArr);
+        return arr.toString();
+    }
+
+    public String selectionSort(Vehicle[] vehicles, String comparator){
+        Vehicle[] sortedArr = sorter.vehicleSelectionSort(vehicles, comparator);
+        VehicleInput arr = new VehicleInput(sortedArr);
+        return arr.toString();
+    }
+
+    public String insertionSort(Vehicle[] vehicles, String comparator){
+        Vehicle[] sortedArr = sorter.vehicleInsertionSort(vehicles, comparator);
         VehicleInput arr = new VehicleInput(sortedArr);
         return arr.toString();
     }

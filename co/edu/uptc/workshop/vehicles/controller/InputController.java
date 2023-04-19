@@ -45,6 +45,7 @@ public class InputController {
         int wheels = 0;
         String type = "";
         String vehiclePlate = "";
+        String model = "";
         String[] vehicleToSelect = this.findVehicle(listVehicles, plate);
         try {
             if (vehicleToSelect == null) {
@@ -57,27 +58,28 @@ public class InputController {
                 throw new InvalidVehicleArg("Tipo de vehiculo no valido");
             }
 
-            fuelBar = Float.parseFloat(vehicleToSelect[1].replaceAll(" ",""));
-            doors = Integer.parseInt(vehicleToSelect[2].replaceAll(" ",""));
-            wheels = Integer.parseInt(vehicleToSelect[3].replaceAll(" ",""));
-            type = vehicleToSelect[4].replaceFirst(" ", "");
+            fuelBar = Float.parseFloat(vehicleToSelect[2].replaceAll(" ",""));
+            doors = Integer.parseInt(vehicleToSelect[3].replaceAll(" ",""));
+            wheels = Integer.parseInt(vehicleToSelect[4].replaceAll(" ",""));
+            type = vehicleToSelect[5].replaceFirst(" ", "");
             vehiclePlate = vehicleToSelect[0].replaceAll(" ","");
+            model = vehicleToSelect[1].replaceAll(" ", "");
 
             switch (type) {
                 case "gasoline" -> {
-                    this.vehicle = new GasolineCar(vehiclePlate, fuelBar, doors, wheels);
+                    this.vehicle = new GasolineCar(vehiclePlate, model,fuelBar, doors, wheels);
                 }
                 case "helix" -> {
-                    this.vehicle = new RotatoryWings(vehiclePlate, fuelBar, doors, wheels);
+                    this.vehicle = new RotatoryWings(vehiclePlate, model, fuelBar, doors, wheels);
                 }
                 case "plane" -> {
-                    this.vehicle = new FixedWings(vehiclePlate, fuelBar, doors, wheels);
+                    this.vehicle = new FixedWings(vehiclePlate, model,fuelBar, doors, wheels);
                 }
                 case "electric" ->{
-                    this.vehicle = new ElectricalVehicle(vehiclePlate, fuelBar, doors, wheels);
+                    this.vehicle = new ElectricalVehicle(vehiclePlate,model, fuelBar, doors, wheels);
                 }
                 case "disel"->{
-                    this.vehicle = new DiselVehicle(vehiclePlate, fuelBar, doors, wheels);
+                    this.vehicle = new DiselVehicle(vehiclePlate, model,fuelBar, doors, wheels);
                 }
             }
 

@@ -1,8 +1,8 @@
 package ProgrammingI.co.edu.uptc.workshop.vehicles.model;
 
 public class RotatoryWings extends AirVehicle{
-    public RotatoryWings(String plate, double fuelBar,int doors, int wheels) {
-        super(plate, fuelBar, doors, wheels);
+    public RotatoryWings(String plate, String series,double fuelBar,int doors, int wheels) {
+        super(plate, series,fuelBar, doors, wheels);
     }
     @Override
     public void toTakeOff(double distance) {

@@ -1,8 +1,8 @@
 package ProgrammingI.co.edu.uptc.workshop.vehicles.model;
 
 public class ElectricalVehicle extends TerrestVehicle{
-    public ElectricalVehicle(String plate, double fuelBar,int doors, int wheels){
-        super(plate, fuelBar, doors, wheels);
+    public ElectricalVehicle(String plate, String series,double fuelBar,int doors, int wheels){
+        super(plate, series,fuelBar, doors, wheels);
     }
 
     @Override

@@ -13,7 +13,9 @@ public class Main {
         VehicleInput vehicles = new VehicleInput();
         System.out.println(vehicles.toString());
         Vehicle[] vehiclesCopy = vehicles.getVehicles().clone();
-        System.out.println(sortController.bubbleSortByPlate(vehiclesCopy));
+        System.out.println(sortController.bubbleSort(vehiclesCopy, "combustible"));
+        System.out.println(sortController.selectionSort(vehiclesCopy, "placas"));
+        System.out.println(sortController.insertionSort(vehiclesCopy, "puertas"));
     }
 
     public static void fillVehicleArr(VehicleInput vehicles){
@@ -24,6 +26,7 @@ public class Main {
 
     public static Vehicle verifyVehicleInfo(){
         String plate = "";
+        String model = "";
         String vehicleType = "";
         int numDoors = 0;
         int numWheels = 0;
@@ -34,11 +37,12 @@ public class Main {
             try {
                 vehicleType = vehicleData[0].toLowerCase().replaceAll(" ", "");
                 plate = vehicleData[1];
-                numDoors = Integer.parseInt(vehicleData[2]);
-                numWheels = Integer.parseInt(vehicleData[3]);
-                maxFuelCapacity = Double.parseDouble(vehicleData[4]);
+                model = vehicleData[2];
+                numDoors = Integer.parseInt(vehicleData[3]);
+                numWheels = Integer.parseInt(vehicleData[4]);
+                maxFuelCapacity = Double.parseDouble(vehicleData[5]);
 
-                Vehicle myNewVehicle = createNewVehicle(vehicleType, plate,numDoors,numWheels,maxFuelCapacity);
+                Vehicle myNewVehicle = createNewVehicle(vehicleType, plate,model,numDoors,numWheels,maxFuelCapacity);
 
                 if(myNewVehicle == null) throw new IllegalArgumentException();
 
@@ -57,22 +61,22 @@ public class Main {
 
    public static String[] inputVehicleInfo(){
         String[] vehicleArgs = new String[]{"Tipo de vehiculo(disel,electrico,aereo rotatorio, aereo fijo, gasolina)",
-        "placa", "Número Puertas", "Número ruedas","capacidad máxima de combustible (gl/mAh)"};
+        "placa", "modelo","Número Puertas", "Número ruedas","capacidad máxima de combustible (gl/mAh)"};
 
-        String[] vehicleData = new String[5];
+        String[] vehicleData = new String[6];
         for (int i = 0; i < vehicleData.length; i++){
             vehicleData[i] = JOptionPane.showInputDialog(null, "Ingrese " + vehicleArgs[i]);
         }
         return vehicleData;
    }
 
-   public static Vehicle createNewVehicle(String typeVehicle, String plate, int doors, int wheels,double maxFuel){
+   public static Vehicle createNewVehicle(String typeVehicle, String plate,String model, int doors, int wheels,double maxFuel){
         switch (typeVehicle){
-            case "disel" -> { return  new DiselVehicle(plate,maxFuel,doors,wheels);}
-            case "gasolina" -> { return new GasolineCar(plate, maxFuel, doors, wheels);}
-            case "electrico" -> { return new ElectricalVehicle(plate, maxFuel, doors, wheels);}
-            case "aereorotatorio" -> { return new RotatoryWings(plate, maxFuel, doors, wheels);}
-            case "aereofijo" -> { return new FixedWings(plate, maxFuel, doors, wheels); }
+            case "disel" -> { return  new DiselVehicle(plate,model,maxFuel,doors,wheels);}
+            case "gasolina" -> { return new GasolineCar(plate, model,maxFuel, doors, wheels);}
+            case "electrico" -> { return new ElectricalVehicle(plate,model, maxFuel, doors, wheels);}
+            case "aereorotatorio" -> { return new RotatoryWings(plate, model,maxFuel, doors, wheels);}
+            case "aereofijo" -> { return new FixedWings(plate, model,maxFuel, doors, wheels); }
         }
         return null;
    }

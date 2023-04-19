@@ -5,11 +5,13 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
     private int wheels;
     private double speed;
     private String plate;
+    private String model;
     private double fuelBar;
     private double fullFuel;
 
-    public Vehicle(String plate, double fullFuel,int doors, int wheels){
+    public Vehicle(String plate,String model, double fullFuel,int doors, int wheels){
         this.plate = plate;
+        this.model = model;
         this.fullFuel = fullFuel;
         this.fuelBar = fullFuel;
         this.doors = doors;
@@ -23,6 +25,9 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
 
     public String getPlate() {
         return plate;
+    }
+    public String getModel() {
+        return model;
     }
 
     public int getDoors() {
