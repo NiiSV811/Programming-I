@@ -2,3 +2,5 @@ ZXF 347, 45.4, 4, 4,gasoline
 ABC 123, 100, 2, 8,disel
 ZXC 355, 400.5, 2, 4,electric
 BDU 891, 345, 2, 2,gasoline
+ABC 231, 1000, 4, 8,plane
+DEF 123, 450, 2, 4,helix

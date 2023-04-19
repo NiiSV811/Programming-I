@@ -1,0 +1,39 @@
+package ProgrammingI.co.edu.uptc.workshop.vehicles.model;
+
+public class RotatoryWings extends AirVehicle{
+    public RotatoryWings(String plate, double fuelBar,int doors, int wheels) {
+        super(plate, fuelBar, doors, wheels);
+    }
+    @Override
+    public void toTakeOff(double distance) {
+        super.moveUp(distance);
+    }
+    public void toTakeOff() {
+        super.moveUp(MIN_TAKE_OFF_VERTICAL);
+    }
+
+
+    @Override
+    public void toConsumeFuel(double fuel) {
+        if(this.getFuelBar()-fuel >= 0){
+            this.setFuelBar(this.getFuelBar()-fuel* GASOLINE_AIR_PROPORTION);
+        }
+    }
+
+    @Override
+    public void toTurnOn() {
+        System.out.println("Prendiendo Motores");
+        System.out.println("Comenzando a girar helices");
+        System.out.println("Despegando");
+        this.toConsumeFuel(this.getFullFuel());
+        toTakeOff();
+    }
+
+    @Override
+    public void toTurnOff() {
+        System.out.println("Descendiendo");
+        System.out.println("Deteniendo helices");
+        System.out.println("Apagando motores\nListo!");
+
+    }
+}

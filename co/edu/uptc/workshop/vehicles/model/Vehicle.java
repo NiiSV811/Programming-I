@@ -16,9 +16,9 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
         this.wheels = wheels;
         this.speed = 0;
 
-        printPlate();
-        toTurnOn();
-        fuelLevel();
+        //printPlate();
+        //toTurnOn();
+        //fuelLevel();
     }
 
     public String getPlate() {
@@ -83,30 +83,31 @@ public  abstract class Vehicle implements Turneable, Consumible, Moveable {
 
     @Override
     public void moveForward(double distance) {
-        System.out.println("vehiculo viajando a" + distance + " hacia adelante");
+        System.out.println("vehiculo viajando a " + distance + " (m) hacia adelante");
     }
 
     @Override
     public void moveBackwarward(double distance) {
-        System.out.println("vehiculo viajando a" + distance + " hacia atrás");
+        System.out.println("vehiculo viajando a " + distance + " (m) hacia atrás");
     }
 
     @Override
     public void moveLeft(double distance) {
-        System.out.println("vehiculo viajando a" + distance + " a la izquierda");
+        System.out.println("vehiculo viajando a " + distance + " (m) a la izquierda");
     }
 
     @Override
     public void moveRight(double distance) {
-        System.out.println("vehiculo viajando a" + distance + " a la derecha");
+        System.out.println("vehiculo viajando a " + distance + " (m) a la derecha");
     }
     @Override
     public void moveUp(double distance) {
-        System.out.println("vehiculo viajando a" + distance + " hacia arriba");
+
+        System.out.println("vehiculo viajando a " + distance + " (m) hacia arriba");
     }
     @Override
     public void moveDown(double distance) {
-        System.out.println("vehiculo viajando a" + distance + " hacia abajo");
+        System.out.println("vehiculo viajando a " + distance + " (m)  hacia abajo");
     }
 
     @Override

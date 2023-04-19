@@ -2,15 +2,43 @@ package ProgrammingI.co.edu.uptc.workshop.vehicles.controller;
 
 import ProgrammingI.co.edu.uptc.workshop.vehicles.exceptions.CarNotFound;
 import ProgrammingI.co.edu.uptc.workshop.vehicles.exceptions.InvalidVehicleArg;
-import ProgrammingI.co.edu.uptc.workshop.vehicles.model.DiselVehicle;
-import ProgrammingI.co.edu.uptc.workshop.vehicles.model.ElectricalVehicle;
-import ProgrammingI.co.edu.uptc.workshop.vehicles.model.GasolineCar;
-import ProgrammingI.co.edu.uptc.workshop.vehicles.model.Vehicle;
+import ProgrammingI.co.edu.uptc.workshop.vehicles.model.*;
 
 public class InputController {
+    private Vehicle vehicle;
+    public InputController(){
+        this.vehicle = null;
+    }
 
-    public InputController(){}
-    public Vehicle selectVehicle(String[][] listVehicles, String plate) throws CarNotFound, InvalidVehicleArg {
+    public void toAcelerate(double speed){
+        this.vehicle.toAcelerate(speed);
+    }
+    public void toBrake(double speed){
+        this.vehicle.toBrake(speed);
+    }
+    public void moveForward(double distance){
+        this.vehicle.moveForward(distance);
+    }
+    public void moveBackward(double distance){
+        this.vehicle.moveBackwarward(distance);
+    }
+    public void moveLeft(double distance){
+        this.vehicle.moveLeft(distance);
+    }
+    public void moveRight(double distance){
+        this.vehicle.moveRight(distance);
+    }
+    public void moveUp(double distance){
+        this.vehicle.moveUp(distance);
+    }
+    public void moveDown(double distance){
+        this.vehicle.moveDown(distance);
+    }
+
+    public void turnOff(){
+        this.vehicle.toTurnOff();
+    }
+    public String selectVehicle(String[][] listVehicles, String plate) throws CarNotFound, InvalidVehicleArg {
 
         float fuelBar = 0;
         int doors = 0;
@@ -21,7 +49,6 @@ public class InputController {
         try {
             if (vehicleToSelect == null) {
                 throw new CarNotFound("Placa de vehiculo no encontrada");
-
             }
             if (vehicleToSelect[4].isEmpty()) {
                 throw new InvalidVehicleArg("Tipo de vehiculo no encontrado");
@@ -38,14 +65,19 @@ public class InputController {
 
             switch (type) {
                 case "gasoline" -> {
-                    return new GasolineCar(vehiclePlate, fuelBar, doors, wheels);
+                    this.vehicle = new GasolineCar(vehiclePlate, fuelBar, doors, wheels);
                 }
-
-                case "disel" -> {
-                    return new DiselVehicle(vehiclePlate, fuelBar, doors, wheels);
+                case "helix" -> {
+                    this.vehicle = new RotatoryWings(vehiclePlate, fuelBar, doors, wheels);
                 }
-                case "electric" -> {
-                    return new ElectricalVehicle(vehiclePlate, fuelBar, doors, wheels);
+                case "plane" -> {
+                    this.vehicle = new FixedWings(vehiclePlate, fuelBar, doors, wheels);
+                }
+                case "electric" ->{
+                    this.vehicle = new ElectricalVehicle(vehiclePlate, fuelBar, doors, wheels);
+                }
+                case "disel"->{
+                    this.vehicle = new DiselVehicle(vehiclePlate, fuelBar, doors, wheels);
                 }
             }
 
@@ -69,6 +101,7 @@ public class InputController {
 
     private boolean correctType(String[] vehicle){
         String vehicleType = vehicle[4].replaceFirst(" ", "");
-        return vehicleType.equals("gasoline") || vehicleType.equals("disel") || vehicleType.equals("electric");
+        return vehicleType.equals("gasoline") || vehicleType.equals("disel") || vehicleType.equals("electric")
+                || vehicleType.equals("helix") || vehicleType.equals("plane");
     }
 }

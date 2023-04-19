@@ -23,7 +23,7 @@ public class DiselVehicle extends TerrestVehicle {
 
     @Override
     public void toTurnOff() {
-        System.out.println("Apagando vehiculo a gasolina...");
+        System.out.println("Apagando vehiculo a disel...");
         System.out.println("Terminando combustion");
         System.out.println("Deteniendo cigueñal");
         System.out.println("* hace ruido fuerte *");

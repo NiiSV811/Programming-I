@@ -1,6 +1,6 @@
 package ProgrammingI.co.edu.uptc.workshop.vehicles.model;
 
-public class GasolineCar extends TerrestVehicle {
+public class GasolineCar extends GasolineVehicle {
     public GasolineCar(String plate, double fuelBar,int doors, int wheels){
         super(plate, fuelBar, doors, wheels);
     }
@@ -29,5 +29,16 @@ public class GasolineCar extends TerrestVehicle {
         System.out.println("Terminando combustion");
         System.out.println("Deteniendo cigueñal");
         System.out.println("* hace ruidito *");
+    }
+
+
+    @Override
+    public void moveUp(double distance) {
+        System.out.println("Los carros no vuelan");
+    }
+
+    @Override
+    public void moveDown(double distance) {
+        System.out.println("Los carros no se mueven hacia abajo");
     }
 }

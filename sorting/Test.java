@@ -22,7 +22,6 @@ public class Test {
         int[] array = {1,7,3,2,4,9,5,1};
         int[] arr2 = {1,2,4,5,2,3};
 
-
         System.out.println("bubble Sort");
         System.out.println(printArrs(sorter.bubbleSort(arr)));
 

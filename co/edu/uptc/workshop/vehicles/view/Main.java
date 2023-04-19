@@ -36,7 +36,7 @@ public class Main {
 
             System.out.println("Ingrese placas del vehiculo: ");
             plate = inputLine.nextLine();
-            Vehicle myCar = controller.selectVehicle(garage, plate);
+            controller.selectVehicle(garage, plate);
 
             do{
                 System.out.println(msg);
@@ -47,37 +47,37 @@ public class Main {
                     case 1 ->{
                         System.out.println("cuanto desea acelerar (m/s^2) ");
                         arg = inputLine.nextFloat();
-                        myCar.toAcelerate(arg);
+                        controller.toAcelerate(arg);
                     }
                     case 2 ->{
                         System.out.println("cuanto desea frenar (m/s^2) ");
                         arg = inputLine.nextFloat();
-                        myCar.toBrake(arg);
+                        controller.toBrake(arg);
                     }
                     case 3 ->{
                         System.out.println("cuanto desea avanzaar (m) ");
                         arg = inputLine.nextFloat();
-                        myCar.moveForward(arg);
+                        controller.moveForward(arg);
                     }
                     case 4 ->{
                         System.out.println("cuanto desea retrocedr (m) ");
                         arg = inputLine.nextFloat();
-                        myCar.moveBackwarward(arg);
+                        controller.moveBackward(arg);
                     }
                     case 5 ->{
                         System.out.println("cuanto desea girar a la derecha (m) ");
                         arg = inputLine.nextFloat();
-                        myCar.moveRight(arg);
+                        controller.moveRight(arg);
                     }
                     case 6 ->{
                         System.out.println("cuanto desea girar a la izquierda (m) ");
                         arg = inputLine.nextFloat();
-                        myCar.moveLeft(arg);
+                        controller.moveLeft(arg);
                     }
                 }
             }while (true);
 
-            myCar.toTurnOff();
+            controller.turnOff();
 
         } catch (FileNotFoundException e) {
             System.out.println("Garaje no encontrado... Intente de nuevo");
