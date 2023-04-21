@@ -5,6 +5,8 @@ import ProgrammingI.co.edu.uptc.sortingworkshop.model.VehicleSort;
 import ProgrammingI.co.edu.uptc.sortingworkshop.view.VehicleInput;
 import ProgrammingI.co.edu.uptc.workshop.vehicles.model.Vehicle;
 
+import java.util.concurrent.TimeUnit;
+
 public class SortController {
     private VehicleSort sorter;
     private static final String BUBBLE = "bubble";
@@ -34,4 +36,15 @@ public class SortController {
         return arr.toString();
     }
 
+
+
+    public String sortTime(Vehicle[] vehicles, String method, String comparator) throws InterruptedException{
+        long startTime = System.nanoTime();
+        this.sort(vehicles, method, comparator);
+        //TimeUnit.SECONDS.sleep(5);
+        long endTime = System.nanoTime();
+        long timeElapsed = endTime - startTime;
+
+        return "Tiempo de ordenamiento en : " + timeElapsed / 10000000  + " milisegundos";
+    }
 }
